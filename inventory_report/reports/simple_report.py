@@ -3,19 +3,19 @@ from collections import Counter
 
 class SimpleReport:
     @classmethod
-    def get_oldest_product(cls, products_list):
+    def get_oldest_product(cls, products_list: list) -> str:
         dates = [product["data_de_fabricacao"] for product in products_list]
         oldest = min(dates)
         return oldest
 
     @classmethod
-    def get_nearest_expiring_product(cls, products_list):
+    def get_nearest_expiring_product(cls, products_list: list) -> str:
         dates = [product["data_de_validade"] for product in products_list]
         expiring = min(dates)
         return expiring
 
     @classmethod
-    def get_company_bigger_stock(cls, products_list):
+    def get_company_bigger_stock(cls, products_list: list) -> str:
         companies = [product[
             "nome_da_empresa"
         ] for product in products_list]
@@ -23,7 +23,7 @@ class SimpleReport:
         return sum.most_common(1)[0][0]
 
     @classmethod
-    def generate(cls, products_list) -> str:
+    def generate(cls, products_list: list) -> str:
         older = SimpleReport.get_oldest_product(products_list)
         nearest_expiring = SimpleReport.get_nearest_expiring_product(
             products_list
