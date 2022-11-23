@@ -19,9 +19,9 @@ class Inventory:
     @classmethod
     def data_reader(cls, filepath):
         if filepath.endswith(".csv"):
-            return cls.csv_reader(filepath)
+            return cls.csv_read(filepath)
         elif filepath.endswith(".json"):
-            return cls.json_reader(filepath)
+            return cls.json_read(filepath)
 
     @classmethod
     def import_data(cls, filepath, type):
