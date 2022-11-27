@@ -32,7 +32,7 @@ class Inventory:
             return cls.xml_read(filepath)
 
     @classmethod
-    def import_data(cls, filepath, type):
+    def import_data(cls, filepath, report_type):
         data = cls.data_reader(filepath)
         if type == "simples":
             return SimpleReport.generate(data)
