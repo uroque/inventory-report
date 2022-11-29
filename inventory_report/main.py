@@ -15,10 +15,10 @@ def main():
     if filepath.endswith(".xml"):
         report = InventoryRefactor(XmlImporter)
 
-    if filepath.endswith(".csv"):
+    elif filepath.endswith(".csv"):
         report = InventoryRefactor(CsvImporter)
 
-    if filepath.endswith(".json"):
+    elif filepath.endswith(".json"):
         report = InventoryRefactor(JsonImporter)
 
     return sys.stdout.write(report.import_data(filepath, report_type))
