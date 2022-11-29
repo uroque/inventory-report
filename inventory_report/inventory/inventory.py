@@ -34,7 +34,7 @@ class Inventory:
     @classmethod
     def import_data(cls, filepath, report_type):
         data = cls.data_reader(filepath)
-        if type == "simples":
+        if report_type == "simples":
             return SimpleReport.generate(data)
-        elif type == "completo":
+        elif report_type == "completo":
             return CompleteReport.generate(data)
