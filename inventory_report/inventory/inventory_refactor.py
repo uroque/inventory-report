@@ -14,7 +14,7 @@ class InventoryRefactor:
 
     def import_data(self, filepath, report_type):
         self.data.extend(self.importer.import_data(filepath))
-        if type == "simples":
+        if report_type == "simples":
             return SimpleReport.generate(self.data)
-        elif type == "completo":
+        elif report_type == "completo":
             return CompleteReport.generate(self.data)
